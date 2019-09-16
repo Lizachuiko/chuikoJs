@@ -1,17 +1,17 @@
 let arr = [1, 2, 3, 4, 5, 6, 7];
-  
+
 // alert( arr.filter(inBetween(3, 6)) ); // 3,4,5,6
 
-alert( arr.filter(inArray([1, 2, 10])) ); // 1,2
+console.log('dfdf',arr.filter(inArray([1, 2, 10]))); // 1,2
 
 
 function inBetween(a, b) {
-   return function(el) {
-      if(el >= a && el<=b ) {
-         return true;
-      }
-      return false;
-   }
+    return function(el) {
+        if(el >= a && el<=b ) {
+            return true;
+        }
+        return false;
+    }
 }
 
 
@@ -29,18 +29,23 @@ function inBetween(a, b) {
 
 // если подставить в тело функции то будет так 
 
-arr.filter(inBetween(3, 6)(el)) ///вот это не вызывает вопросов 
+// arr.filter(inBetween(3, 6)(el)) ///вот это не вызывает вопросов 
 // но без el непонятно 
 
 
 
 function inArray(args) {
-   return function(el) {
-      for (let arg of args) { // не работает arg почему то не могу перебрать не понимаю
-         if (el === arg) {
-            return true;
-         }
-         return false;
+let arr = []
+  return function(el) {
+    for (let a of args) {
+      if (a===el) {
+        arr.push(a);
+
       }
-   }
+
+    }
+    return arr;
+
+  }
+  
 }
