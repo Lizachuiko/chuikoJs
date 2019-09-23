@@ -3,12 +3,12 @@ function makeBuffer() {
 	buffer.clear = function() {
 		totalString = '';
 		// я пыталась написать так:
-		// return totalString;
+		return totalString;
 	}
 	function buffer(str='') {
 		return totalString += str;
 	}
-	return buffer;
+	// return buffer;
 	// и без вот этого return 
 	// не очень понимаю почему так нельзя
 }
